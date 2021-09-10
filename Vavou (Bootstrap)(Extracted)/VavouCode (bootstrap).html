@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+			Vavou (Bootstrap)
+		</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<style>
+		body
+		{
+			background:linear-gradient(#ffffff, #5789CA ) no-repeat;
+			background-attachment:fixed;
+			background-position:center;
+			background-size:cover;
+			margin:0;
+		}
+		.main-content
+		{
+			border-radius:20px;
+		}
+		#searchbutton
+		{
+			background-image:linear-gradient(to bottom,rgb(255,255,255),rgb(242, 119, 11));
+			border-radius:4px;
+			border:none;
+			border:1px solid rgb(242, 119, 11);
+			color:rgb(255,255,255);
+			font-weight:bold;
+		}
+		.queries>span
+		{
+			display:block;
+		}
+		.queries
+		{
+			display:block;
+		}
+		.queries>span:first-of-type
+		{
+			margin:0.5em 0;
+			font-size:0.8em;
+		}
+		.queries>span:first-of-type>a
+		{
+			text-decoration:none;
+			color:black;
+		}
+		.queries>span:first-of-type>a:hover,footer>div>span:last-of-type>a:hover
+		{
+			text-decoration:underline;
+		}
+		.queries>span:last-of-type
+		{
+			padding:1%;
+			text-align:center;
+			background-color:rgb(167, 221, 240);
+		}
+		#membername
+		{
+			color:rgb(251,132,4);
+		}
+		#nav1
+		{	
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(46,46,46),rgb(145,145,145));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav1:hover
+		{
+			color:rgb(46,46,46);
+			box-shadow:0 6px 2px rgba(46,46,46,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav2
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(208,139,0),rgb(250,166,42));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav2:hover
+		{
+			color:rgb(208,139,0);
+			box-shadow:0 6px 2px rgba(208,139,0,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav3
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(28,49,142),rgb(69,176,246));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav3:hover
+		{
+			color:rgb(28,49,142);
+			box-shadow:0 6px 2px rgba(28,49,142,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav4
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(88,86,87),rgb(151,151,151));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav4:hover
+		{
+			color:rgb(88,86,87);
+			box-shadow:0 6px 2px rgba(88,86,87,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav5
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(75,138,68),rgb(137,197,99));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav5:hover
+		{
+			color:rgb(75,138,68);
+			box-shadow:0 6px 2px rgba(75,138,68,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav6
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(193,60,55),rgb(255,95,158));
+			background-repeat:np-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav6:hover
+		{
+			color:rgb(193,60,55);
+			box-shadow:0 6px 2px rgba(193,60,55,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav7
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(81,62,143),rgb(123,136,230));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav7:hover
+		{
+			color:rgb(81,62,143);
+			box-shadow:0 6px 2px rgba(81,62,143,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav8
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(79,114,196),rgb(128,209,252));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav8:hover
+		{
+			color:rgb(79,114,196);
+			box-shadow:0 6px 2px rgba(79,114,196,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav9
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(176,122,75),rgb(224,168,141));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.9) inset;
+		}
+		#nav9:hover
+		{
+			color:rgb(176,122,75);
+			box-shadow:0 6px 2px rgba(176,122,75,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		#nav10
+		{
+			color:rgb(255,255,255);
+			font-weight:bold;
+			text-decoration:none;
+			background-image:linear-gradient(to bottom,rgb(201,153,42),rgb(254,203,112));
+			background-repeat:no-repeat;
+			background-position:center;
+			border-radius:5px;
+			padding:0.4em 1em;
+			box-shadow:0 6px 2px rgba(255,255,255,0.8) inset;
+		}
+		#nav10:hover
+		{
+			color:rgb(201,153,42);
+			box-shadow:0 6px 2px rgba(201,153,42,0.8) inset;
+			background:rgb(255,255,255);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+		}
+		.navbar *
+		{
+			flex-grow:1;
+			flex-wrap:wrap;
+		}
+		.actionbox
+		{
+			border:1px solid rgb(145,154,161);
+			background-color:rgb(250,250,250);
+			border-radius:6%;
+			overflow:hidden;
+			margin-bottom:1em;
+			box-shadow:2px 2px 6px 2px rgb(145,154,161);
+		}
+		.actionbox>span
+		{
+			background:linear-gradient(to right,rgb(87,143,192),rgb(192,221,253)) no-repeat;
+			padding:0.5em 1em;
+		}
+		.actionbox>a
+		{
+			text-decoration:none;
+			color:rgb(255,102,0);
+			font-size:0.8em;
+			padding:1%;
+			border-bottom:1px solid rgb(223,223,223);
+		}
+		.dropdown-titles
+		{
+			background:linear-gradient(to right,rgb(130,130,130),rgb(224,224,224)) no-repeat;
+			background-position:center;
+		}
+		.dropdown-titles:hover
+		{
+			background:linear-gradient(to right,rgb(87,143,192),rgb(192,221,253)) no-repeat;
+		}
+		.shopping,.shout-about,.recently-visited,.side-banner,.network-updates,.communicate
+		{
+			background-color:rgb(250,250,250);
+			border-radius:15px;
+			overflow:hidden;
+			border:1px solid rgb(145,154,161);
+			box-shadow:2px 2px 6px 2px rgb(145,154,161);
+			margin:1em 0;
+		}
+		article>a
+		{
+			text-decoration:none;
+			color:rgb(122,129,209);
+			font-size:1em;
+			border-bottom:1px solid rgb(145,154,161);
+			padding:0.5em 0;
+		}
+		article>a:hover
+		{
+			box-shadow: 0 0 5px 2px rgb(122,129,209) inset;
+			text-decoration:none;
+		}
+		.shout-about
+		{
+			background:linear-gradient(to bottom,rgb(196,200,238),rgb(121,133,191)) no-repeat;
+			padding: 0.5em 1em;
+			line-height:2em;
+		}
+		.shout-about>span>img
+		{
+			width:3em;
+			height:4em;
+		}
+		.side-banner
+		{
+			height:200px;
+			background:rgb(167,184,227);
+			line-height:200px;
+			font-size:1.5em;
+		}
+		button
+		{
+			border:none;
+		}
+		.menubar
+		{
+			border-radius:1em;
+			border:2px solid rgb(204,204,206);
+			padding:0 1em;
+			margin:1em 0;
+			background:linear-gradient(to bottom,rgb(239,239,239),rgb(253,253,253) 50%,rgb(234,234,234) 50%,rgb(231,231,231));
+		}
+		.menubar>a:last-of-type
+		{
+			border-right:2px solid rgb(204,204,206);
+		}
+		.menubar>a
+		{
+			flex-basis:120px;
+			font-size:0.8em;
+			font-weight:600;
+			border-left:2px solid rgb(204,204,206);
+			line-height:100%;
+			color:rgb(145,154,161);
+			padding:1% 2%;
+		}
+		.menubar>a:hover
+		{
+			box-shadow:0 0 3px 1px rgb(204,204,206);
+			transform:scale(1,1);
+			-webkit-transform:scale(1,1);
+			box-shadow:0 0 4px 1px rgb(206,206,206) inset;
+		}
+		.menubar>a>img
+		{
+			width:3em;
+			height:2em;
+		}
+		footer
+		{
+			margin-top:5px;
+			padding:1em;
+			border-radius:20px;
+		}
+		footer>div
+		{
+			border-top:1px solid rgb(175,175,175);
+			border-bottom:1px solid rgb(175,175,175);
+			padding:1em 2em;
+			text-align:center;
+			font-size:0.8em;
+			color:rgb(150,150,150);
+			font-weight:bold;
+		}
+		footer>div>span:last-child
+		{
+			margin-left:2em;
+		}
+		footer>div>span:first-child:before
+		{
+			content:'\00a9 ';
+		}
+		footer>div>span:last-child>a
+		{
+			text-decoration:none;
+			color:rgb(175,175,175);
+			padding:0 0.5em;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="container bg-light main-content">
+				<div class="row bg-light no-gutters justify-content-between">
+					<div class="col-md-8 col-12 order-1">
+						<img src="VavouBetaLogo.png" alt="Vavou Logo" class="img-fluid">
+						<form class="form-inline d-inline-block">
+							<input type="search" id="search-box" class="form-control form-control-sm">
+							<button type="button" id="searchbutton" class="btn-sm d-inline-block">Search</button>
+							<small id="advanced-search" class=" text-muted">Advanced search</small>
+						</form>
+					</div>
+					<div class="col-md-2 order-2 no-gutters queries">
+					<span class="text-center">
+						<a href="#">My Account</a> |
+						<a href="#">Contact Us</a> |
+						<a href="#">Help</a>
+					</span>
+					<span>
+						<span id="membername">Membername</span> (Logout)
+					</span>
+					</div>
+				</div>
+				<nav class="p-0 navbar bg-light navbar-expand-md">
+					<button class="navbar-toggler btn" style="background-color:rgb(70,130,180); color:white;" type="button" data-toggle="collapse" data-target="#various-links">
+						<span><i class="fas fa-1x fa-bars"></i> Menu </span>
+					</button>
+					<div class="collapse navbar-collapse " id="various-links">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a href="#" class="nav-link text-center" id="nav1">Main Dasboard</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav2">Communication</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav3">Shop</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav4">Mediavault</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav5">Newsletter</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav6">Blog</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav7">Shout!</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav8">Advertise</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav9">Network</a>
+							</li>                           
+							<li class="nav-item">           
+								<a href="#" class="nav-link text-center" id="nav10">Response</a>	
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="container-fluid">
+					<div class="row pt-4  no-gutters">
+						<div class="col-md-3 d-flex flex-column order-2 order-md-1 bg-warning">
+							<div class="actionbox d-flex flex-column  w-100">
+								<span class="font-weight-bold text-white">Action Box</span>
+								<a class=""href="#"><img src="house_icon.jpg"/>Go to dashboard</a>
+								<a class=""href="#"><img src="tag_icon.jpg"/>Design a new advert</a>
+								<a class=""href="#"><img src="tag_icon2.jpg"/>View your portfolio</a>
+								<a class=""href="#"><img src="antenna_icon.jpg"/>Run a new campaign</a>
+								<a class=""href="#"><img src="manager_icon.jpg"/>Manage your campaigns</a>
+								<a class=""href="#"><img src="graph_icon.jpg"/>Campaign performance</a>
+								<a class="border-none"href="#"><img src="wizard_icon.jpg"/>Rerun wizard</a>
+							</div>
+							<div class="shopping w-100">
+								<button class="dropdown-titles text-white px-1 py-1 font-weight-bold w-100" type="button" data-toggle="collapse" data-target="#shopping-links">Shopping</button>
+								<article id="shopping-links" class="collapse text-center font-weight-bold">	
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Debehams</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">JD Sports</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Topshop</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Jeffries</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Mothercare</a>
+								</article>
+							</div>	
+							<div class="shout-about  text-center font-weight-bold text-light w-100">
+								<span>Shout! About This<img src="orangeloudspeaker.png"></span>
+							</div>
+							<div class="recently-visited">
+								<button class="dropdown-titles text-white px-1 py-1 font-weight-bold w-100" type="button" data-toggle="collapse" data-target="#visited-links">Recently Visited</button>
+									<article id="visited-links" class="collapse text-center font-weight-bold">
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Debehams</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">JD Sports</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Topshop</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Jeffries</a>
+									<a class="d-block" href="https://www.walesonline.co.uk/whats-on/shopping/department-stores-jewellers-shops-set-10397478">Mothercare</a>
+									<a class="d-block" href="https://www.cs.cornell.edu/~jnfoster/papers/frenetic-update-synthesis-pldi15.pdf">Consistency</a>
+									<a class="d-block" href="https://www.cs.cornell.edu/~jnfoster/papers/frenetic-update-synthesis-pldi15.pdf">Two-Phase Updates</a>
+									<a class="d-block" href="https://www.cs.cornell.edu/~jnfoster/papers/frenetic-update-synthesis-pldi15.pdf">Ordering Updates</a>
+									<a class="d-block" href="https://www.pinterest.com">Pinterest</a>
+									<a class="d-block" href="https://www.facebook.com">Facebook</a>
+									<a class="d-block" href="https://in.linkedin.com/">LinkedIn</a>
+									<a class="d-block" href="https://twitter.com">Twitter</a>
+								</article>
+							</div>
+							<div class="side-banner  text-center font-weight-bold text-light">
+								<span>Banner</span>
+							</div>
+							<div class="network-updates">
+								<button class="dropdown-titles text-white px-1 py-1 font-weight-bold w-100" type="button" data-toggle="collapse" data-target="#updates-links">Network Updates</button>
+									<article id="updates-links" class="collapse text-center font-weight-bold">
+									<a class="d-block" href="https://www.cs.cornell.edu/~jnfoster/papers/frenetic-update-synthesis-pldi15.pdf">Consistency</a>
+									<a class="d-block" href="https://www.cs.cornell.edu/~jnfoster/papers/frenetic-update-synthesis-pldi15.pdf">Two-Phase Updates</a>
+									<a class="d-block" href="https://www.cs.cornell.edu/~jnfoster/papers/frenetic-update-synthesis-pldi15.pdf">Ordering Updates</a>
+								</article>
+							</div>
+							<div class="communicate">
+								<button class="dropdown-titles text-white px-1 py-1 font-weight-bold w-100" type="button" data-toggle="collapse" data-target="#communicate-links">Communicate</button>
+										<article id="communicate-links" class="collapse text-center font-weight-bold">
+										<a class="d-block" href="https://www.pinterest.com">Pinterest</a>
+										<a class="d-block" href="https://www.facebook.com">Facebook</a>
+										<a class="d-block" href="https://in.linkedin.com/">LinkedIn</a>
+										<a class="d-block" href="https://twitter.com">Twitter</a>
+									</article>
+								</div>
+							</div>
+						<div class="col-md-9 order-1 d-flex flex-column order-md-2 bg-success">
+							<section class="banner">
+								<img src="Topbanner.png"  alt="banner" width="100%" height="100%">
+							</section>
+							<section class="menubar w-100 d-flex flex-row flex-wrap">
+								<a class="text-center align-self-center href="#"><img src="house_icon.jpg"><figcaption>Dashboard</figcaption></a>
+								<a class="text-center align-self-center href="#"><img src="tag_icon.jpg"><figcaption>Design Advert</figcaption></a>
+								<a class="text-center align-self-center href="#"><img src="antenna_icon.jpg"><figcaption>Run Campaign</figcaption></a>
+								<a class="text-center align-self-center href="#"><img src="manager_icon.jpg"><figcaption>Campaign Manager</figcaption></a>
+								<a class="text-center align-self-center href="#"><img src="tag_icon2.jpg"><figcaption>Advert Portfolio</figcaption></a>
+								<a class="text-center align-self-center href="#"><img src="graph_icon.jpg"><figcaption>Campaign Performance</figcaption></a>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="container  bg-light">
+				<div>
+					<span> 2009 Vavou. All Rights Reserved.</span>
+					<span>
+						|<a href="#"> About </a>|
+						<a href="#"> Contact Us </a>|
+						<a href="#"> Terms & Conditions </a>|
+						<a href="#"> Fair Usage </a>|
+						<a href="#"> Privacy Policy </a>|
+						<a href="#"> Site Map </a>|
+					</span>
+				</div>
+			</footer>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	</body>
+</html>
